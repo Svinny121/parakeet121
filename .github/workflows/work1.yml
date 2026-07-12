@@ -12,20 +12,19 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@v4
 
     - name: Compile sketch for Arduino UNO
       uses: arduino/compile-sketches@v1
       with:
         fqbn: arduino:avr:uno
         sketch-paths: ./Blink_3000_Nano
-        cli-compile-flags: --output-dir ./build
         
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: arduino-uno-binary
         path: |
-          ./build/*.hex
-          ./build/*.elf
+          ./Blink_3000_Nano/build/**/*.hex
+          ./Blink_3000_Nano/build/**/*.elf
     
