@@ -25,6 +25,6 @@ jobs:
       with:
         name: arduino-uno-binary
         path: |
-          ./Blink_3000_Nano/build/**/*.hex
-          ./Blink_3000_Nano/build/**/*.elf
+          ./.compile/**/*.hex
+          ./.compile/**/*.elf
     
