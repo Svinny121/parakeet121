@@ -19,13 +19,13 @@ jobs:
       with:
         fqbn: arduino:avr:uno
         sketch-paths: ./Blink_3000_Nano
-        cli-compile-flags: --output-dir ${{ github.workspace }}/build
+        cli-compile-flags: "-e"
         
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: arduino-uno-binary
         path: |
-          ${{ github.workspace }}/build/*.hex
-          ${{ github.workspace }}/build/*.elf
+          ./Blink_3000_Nano/build/**/*.hex
+          ./Blink_3000_Nano/build/**/*.elf
     
